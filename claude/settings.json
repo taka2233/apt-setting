@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Bash(git log *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(npm *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "mcp__serena__*"
+    ],
+    "deny": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git reset *)",
+      "Bash(git checkout *)",
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(chmod *)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.py"
+  },
+  "effortLevel": "medium"
+}
