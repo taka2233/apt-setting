@@ -30,5 +30,5 @@
     "type": "command",
     "command": "~/.claude/statusline.py"
   },
-  "effortLevel": "medium"
+  "effortLevel": "high"
 }
