@@ -42,13 +42,7 @@ def fmt_reset(five_data):
     if remaining_sec is None:
         return None
 
-    h, rem = divmod(remaining_sec, 3600)
-    m = rem // 60
-    if h > 0:
-        return f"{h}h{m:02d}m"
-    else:
-        return f"{m}m"
-
+    return f"{remaining_sec // 60}m"
 
 def fmt(label, pct, reset_str=None):
     p = round(pct)
@@ -60,9 +54,6 @@ model = data.get("model", {}).get("display_name", "Claude")
 effort = data.get("effort", {}).get("level", "None")
 model += f" ({effort})"
 parts = [model]
-
-cost = data.get("cost", {}).get("total_cost_usd", 0) or 0
-parts.append(f"${cost:.2f}")
 
 ctx = data.get("context_window", {}).get("used_percentage")
 if ctx is not None:
