@@ -10,12 +10,14 @@ BLOCKS = " ▏▎▍▌▋▊▉█"
 R = "\033[0m"
 DIM = "\033[2m"
 
+BAR_WIDTH = 6
+
 
 def gradient(pct):
     return "\033[38;2;80;200;80m"
 
 
-def bar(pct, width=10):
+def bar(pct, width=BAR_WIDTH):
     pct = min(max(pct, 0), 100)
     filled = pct * width / 100
     full = int(filled)
@@ -50,7 +52,9 @@ def fmt(label, pct, reset_str=None):
     return f"{label} {gradient(pct)}{bar(pct)} {p}%{R}{reset_part}"
 
 
-model = data.get("model", {}).get("display_name", "Claude")
+model: str = data.get("model", {}).get("display_name", "Claude")
+model = model.replace(" context", "")
+
 effort = data.get("effort", {}).get("level", "None")
 model += f" ({effort})"
 parts = [model]
