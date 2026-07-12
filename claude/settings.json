@@ -1,34 +1,45 @@
 {
   "permissions": {
     "allow": [
-      "Read",
-      "Edit",
-      "Bash(git log *)",
-      "Bash(git status)",
-      "Bash(git diff *)",
-      "Bash(git show *)",
-      "Bash(git branch *)",
-      "Bash(npm *)",
-      "Bash(ls *)",
-      "Bash(cat *)",
-      "mcp__serena__*"
+      "Bash(cd:*)",
+      "Bash(ls:*)",
+      "Bash(pwd:*)",
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(cut:*)",
+      "Bash(go build:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(wc:*)",
+      "Bash(go fmt ./...)",
+      "Bash(gofmt -w *)",
+      "Bash(gofmt -l *)",
+      "Bash(gofmt -d *)"
     ],
     "deny": [
-      "Bash(git commit *)",
-      "Bash(git push *)",
-      "Bash(git pull *)",
-      "Bash(git merge *)",
-      "Bash(git rebase *)",
-      "Bash(git reset *)",
-      "Bash(git checkout *)",
-      "Bash(rm -rf *)",
-      "Bash(sudo *)",
-      "Bash(chmod *)"
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(svn:*)",
+      "Bash(hg:*)",
+      "Bash(bzr:*)",
+      "Bash(darcs:*)",
+      "Bash(fossil:*)",
+      "Bash(gofmt -r *)",
+      "Bash(mercurial:*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
     ]
   },
   "statusLine": {
     "type": "command",
-    "command": "~/.claude/statusline.py"
+    "command": "~/.claude/statusline.py",
+    "refreshInterval": 180
   },
   "effortLevel": "high"
 }
